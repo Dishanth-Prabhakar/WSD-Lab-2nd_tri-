@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Side</title>
+    <link rel="stylesheet" href="infoa.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <script src="infoa.js"></script>
+    <style>
+        /*.bar {
+            position: fixed;
+        }*/
+
+        .box1 {
+            border: 1px solid white;
+            background-color: yellowgreen;
+            width: 100%;
+            height: 90px;
+            font-size: 35px;
+            padding-left: 35px;
+            padding-top: 10px;
+        }
+
+        .box2 {
+            border: 1px solid white;
+            background-color: white;
+            width: 1519px;
+            padding: 24px;
+        }
+
+        .menu {
+            float: right;
+        }
+
+        .menu a {
+            margin-right: 2px;
+            font-size: 22px;
+            color: yellowgreen;
+            padding: 10px 18px;
+        }
+
+        .menu a:hover {
+            color: red;
+            border: 2px solid red;
+            border-radius: 15px;
+        }
+
+        .signup {
+            border: 1px solid #e9edc9;
+            background-color: #e9edc9;
+            border-radius: 15px;
+            color: white;
+            height: 50px;
+        }
+
+        .signup:hover {
+            background-color: white;
+            border: 1px solid white;
+        }
+
+        .foot {
+            margin: 2em;
+            border: 2px solid yellowgreen;
+            border-radius: 20px;
+            width: 95%;
+            height: 700px;
+            color: gray;
+            padding-top: 25px;
+        }
+
+        .foot a {
+            color: gray;
+        }
+
+        .foot a:hover {
+            color: yellowgreen;
+            border: 2px solid yellowgreen;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .copy {
+            margin: 1em;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .menu1 a {
+            margin-right: 20px;
+            font-size: 22px;
+            color: yellowgreen;
+            padding: 10px 18px;
+        }
+
+        .menu1 a:hover {
+            color: red;
+            border: 2px solid red;
+            border-radius: 15px;
+        }
+
+        .client {
+            padding: 40px;
+        }
+
+        .tab {
+            padding-left: 100px;
+            font-size: 17px;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            text-align: center;
+            border: 2px solid gray;
+            border-collapse: collapse;
+            padding: 20px;
+
+        }
+
+        .branch {
+            padding-left: 85px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+
+<header class="bar">
+    <div class="box1">
+        <img src="companylogo.jpg" width="60px" height="60px" style="border-radius:7px;">
+        <label style="padding-left: 10px;">Dream Interiors</label>
+    </div>
+
+    <div class="box2">
+
+        <span class="menu">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Catalogue</a>
+            <a href="">Careers</a>
+            <a href="">Sign In</a>
+            <button class="signup"><a href="">Sign Up</a></button>
+        </span>
+    </div>
+</header>
+<br><br>
+
+<body ng-app="combinemod">
+    <br><br>
+    <div class="menu1">
+        <span style="padding-left: 100px;"><a href="info.html">Client</a></span>
+        <a href="infoa.html">Admin</a>
+    </div><br><br>
+    <div class="client">
+        <label style="font-size:35px; color:Blue; padding-left: 30px;">Admin-Side </label>
+        <br><br>
+        <hr><br><br>
+
+
+
+        <label style="font-size:25px; padding-left: 70px;">Search user Cart</label><br>
+        <span style="padding-left: 70px;"><input type="search" ng-model="count"></span>
+        <br>
+        <p style="color:gray; font: 15px; padding-left: 70px;">(Enter number in box)</p>
+        <br><br>
+        <div class="tab">
+            <div ng-controller="userController">
+                <table>
+                    <tr style="background-color: lightgray;">
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Phone No.</th>
+                        <th>Mail Id</th>
+                        <th>Cart</th>
+                    </tr>
+                    <tr ng-repeat="user in users ">
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.gender | lowercase}}</td>
+                        <th>{{user.phone}}</th>
+                        <th>{{user.mail}}</th>
+                        <th>{{user.cart | cartfilter:count }}</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+        <br><br>
+        <label style="font-size:25px; padding-left: 70px;">Enter number</label><br>
+        <span style="padding-left: 70px;"><input type="number" ng-model="limit1"></span>
+        <p style="color:gray; font: 15px; padding-left: 70px;">(Enter or select number to Display that many info)</p>
+        <br>
+        <div class="tab">
+            <div ng-controller="userpayController">
+                <table>
+                    <tr style="background-color: lightgray;">
+                        <th>User ID</th>
+                        <th>name</th>
+                        <th>Payment</th>
+                    </tr>
+                    <tr ng-repeat="user in userspay | limitTo : limit1">
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.payment}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <br><br>
+        <hr><br><br>
+        <div ng-app="Employee">
+            <label style="font-size:25px; padding-left: 70px;">Search for Employee's</label><br>
+            <span style="padding-left: 70px;"><input type="search" ng-model="searchemp"></span>
+            <br>
+            <p style="color:gray; font: 15px; padding-left: 70px;">(Enter any thing)</p>
+            <br><br>
+            
+            <label style="font-size:25px; padding-left: 70px;">Enter number of characters</label><br>
+            <span style="padding-left: 70px;"><input type="search" ng-model="limit2"></span>
+            <p style="color:gray; font: 15px; padding-left: 70px;">(Enter number to make the name capital)</p>
+            <br>
+
+            <label style="color:gray; font-size:25px; padding-left: 70px;">Click on Employee name to sort it in
+                ascending order by alphabet</label><br><br>
+            <label style="color:gray; font-size:25px; padding-left: 70px;">Click on Employee ID to sort it back
+            </label><br><br>
+            <div class="tab">
+                <div ng-controller="empController">
+                    <table>
+                        <tr style="background-color: lightgray;">
+                            <th><a href="#" ng-click="order='id'">Employee ID</a></th>
+                            <th><a href="#" ng-click="order='name'">Employee name</a></th>
+                            <th>Gender</th>
+                            <th>Phone No.</th>
+                            <th>Mail Id</th>
+                            <th>Date of<br>Joining</th>
+                            <th>Salary</th>
+                        </tr>
+                        <tr ng-repeat="emp in empes | orderBy: order |  filter : searchemp">
+                            <td>{{emp.id}}</td>
+                            <td>{{emp.name | myfilter : limit2 }}</td>
+                            <td>{{emp.gender}}</td>
+                            <th>{{emp.phone}}</th>
+                            <th>{{emp.mail}}</th>
+                            <th>{{emp.doj | date : 'dd-MM-yyyy'}}</th>
+                            <th>{{emp.sal | currency:'&#8377;'}}</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<footer>
+    <div class="foot">
+        <span><label style="padding-left:80px; font-size:25px;">&gt; <a href="about.html">About</a></label></span>
+        <span><label style="padding-left:410px; font-size:25px;">&gt; <a
+                    href="about.html#expert">Experts</a></label></span>
+        <span><label style="padding-left:410px; font-size:25px;">&gt; <a
+                    href="about.html#achieve">Achievements</a></label></span><br><br>
+        <span><label style="padding-left:79px;font-size:25px;">&gt; <a
+                    href="about.html#awards">Awards</a></label></span>
+        <span><label style="padding-left:398px; font-size:25px;">&gt; <a href="career.html">Careers</a></label></span>
+        <br><br><br>
+        <hr><br>
+
+        <label style="font-size:30px; padding-left:60px; ">Our Office locations : </label><br><br>
+        <div class="branch">
+            <ul>
+
+                <li><b> Bangalore Branch :</b> <br>Phone No. 9876543210<br>Email :
+                    interiorsblr@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br> Magadi Road,
+                    Bangalore, Karnataka - 560036</li><br><br>
+
+                <li><b> Chennai Branch : </b><br>Phone No. 9876543210<br>Email :
+                    interiorschi@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br> Magadi Road,
+                    Chennai, Tamil Nadu - 560036</li><br><br>
+
+                <li><b> Cochi Branch : </b> <br>Phone No. 9876543210<br>Email :
+                    interiorscoc@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br> Magadi Road, Cochi,
+                    Kerala - 560036</li>
+
+
+            </ul>
+
+        </div>
+    </div>
+    <div class="copy"><a href="">Copyrights </a>&copy; Dishanth P</div>
+</footer>
+
+</html>

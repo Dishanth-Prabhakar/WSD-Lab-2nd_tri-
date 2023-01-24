@@ -1,0 +1,131 @@
+<!--<b>To view the changed password :</b>
+<button onclick="showNew()" style="font-size: 15px;"><b>Click here!</b></button> <br><br>
+<label id="passNew" style="padding-left:100px; color:#3b49e3"></label><br> <br><br>
+
+
+
+function showNew() {
+    document.getElementById("passNew").innerText = document.getElementById('newpass').value;
+}-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="domp.css">
+</head>
+<body style="font-family:sans-serif;">
+    <div class="header">
+    <label>Dom parser</label>
+    </div>
+    <table style="padding-left:65px;">
+        <tr>
+            <td>
+            <div class="tab1">
+                <label style="font-size: 30px;"><b>Change Node</b></label><br><br>
+                <button onclick="showhide()" style="font-size: 15px;"><b>Click here!</b></button><br><br>
+                <label><b>Old password :</b></label>
+                <label id="pass" style="padding-left:300px; color:#3b49e3"></label><br><br>
+                <b>New password :</b>
+                <label id="newpass" style="padding-left:300px; color:#3b49e3"></label>
+               
+            </div><br></td>
+            <td>
+            <div class="tab2">
+                <label style="font-size: 30px;"><b>Remove Node</b></label><br><br>
+                <button onclick="showhide1()" style="font-size: 15px;"><b>Click here!</b></button><br><br>
+                <p id="remove2" style="padding-left:150px;"></p>
+            </div></td><br>
+        </tr>
+        <tr>
+            <td>
+            <div class="tab3">
+                <label style="font-size: 30px;"><b>Traverse Node</b></label><br><br>
+                <button onclick="showhide2()" style="font-size: 15px;"><b>Click here!</b></button><br>
+                <p id="fun3" style="padding-left:170px;"></p>
+            </div></td>
+            <td>
+                <div class="tab4">
+                    <label style="font-size: 30px;"><b>Added Node</b></label><br><br>
+                    <button onclick="showhide3()" style="font-size: 15px;"><b>Click here!</b></button><br><br>
+                    <p id="add" style="padding-left:150px;"></p>
+            </div></td>
+        </tr>
+    </table>
+  
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+                myFunction1(this);
+                myFunction2(this);
+                myFunction3(this);
+
+                funphone(this);
+
+            }
+        };
+        xhttp.open("GET", "domparser.xml", true);
+        xhttp.send();
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            x = xmlDoc.getElementsByTagName("pass")[0].childNodes[0];
+            document.getElementById("pass").innerHTML = x.nodeValue;
+            var xmlDoc = xml.responseXML;
+            x.nodeValue = "Amith@789";
+            x = xmlDoc.getElementsByTagName("pass")[0].childNodes[0];
+            document.getElementById("newpass").innerHTML = x.nodeValue;
+
+            document.getElementById("pass").style.display = "none";
+            document.getElementById("newpass").style.display = "none";
+        }
+        function showhide(){
+            document.getElementById("pass").style.display = "flex";
+            document.getElementById("newpass").style.display = "flex";
+        }
+        function myFunction1(xml) {
+            var xmlDoc = xml.responseXML;
+            var root = xmlDoc.documentElement;
+            var currNode = root.childNodes[1];
+            removedNode = currNode.removeChild(currNode.childNodes[7]);
+            document.getElementById("remove2").innerHTML =
+            "Removed Node :<br/>" + removedNode.nodeName;
+            document.getElementById("remove2").style.display = "none";
+        }
+        function showhide1(){
+            document.getElementById("remove2").style.display = "flex";
+        }
+
+        function myFunction2(xml) {
+        var x, i, xmlDoc, txt;
+        xmlDoc = xml.responseXML;
+        txt = "";
+        count=0;
+        x = xmlDoc.documentElement.childNodes;
+        for (i = 0; i < x.length; i++) { 
+            if (x[i].nodeType == 1) {
+                txt += x[i].nodeName + "<br>";  //display the child of root i.e, "customer"
+                count=count+1;
+            }
+        }
+        total = txt +"Total count : "+ count;
+        document.getElementById("fun3").innerHTML = total;
+        document.getElementById("fun3").style.display = "none"; 
+        }
+        function showhide2(){
+            document.getElementById("fun3").style.display = "flex";
+        }
+
+        function myFunction3(xml) {
+            var xmlDoc = xml.responseXML;
+            var root = xmlDoc.documentElement;
+
+            document.getElementById("add").style.display = "none";
+        }
+        function showhide3(){
+            document.getElementById("add").style.display = "flex";
+        } 
+           </script>
+</body>
+</html>

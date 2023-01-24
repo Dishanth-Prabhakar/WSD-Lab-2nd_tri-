@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="">
+    <style>
+        #username {
+            font-size: 23px;
+        }
+
+        #pass {
+            font-size: 23px;
+        }
+
+        #spsw {
+            font-size: 15px;
+        }
+        
+        .box1 {
+            border: 1px solid white;
+            background-color: yellowgreen;
+            width: 100%;
+            height: 110px;
+            font-size: 45px;
+            padding-left: 35px;
+        }
+
+        tr,
+        td {
+            padding: 10px;
+        }
+
+        .box2 {
+            border: 2px solid white;
+            background-color: white;
+            width: 1519px;
+            padding: 24px;
+        }
+
+        .menu {
+            float: right;
+        }
+
+        .menu a {
+            margin-right: 2px;
+            font-size: 22px;
+            color: yellowgreen;
+            padding: 10px 18px;
+        }
+
+        .menu a:hover {
+            color: red;
+            border: 2px solid red;
+            border-radius: 15px;
+        }
+
+        .signup {
+            border: 1px solid #e9edc9;
+            background-color: #e9edc9;
+            border-radius: 15px;
+            height: 50px;
+        }
+
+        .signup:hover {
+            background-color: white;
+            border: 1px solid white;
+        }
+
+       
+        .logform{
+            float: right;
+            margin-right: 6em;
+            
+        }
+
+        #login {
+            /*border: 3px solid yellowgreen;   // border for the login form //
+            border-radius: 17px;*/
+            width: 450px;
+            height: 480px;
+            padding: 45px;
+        }
+       
+        .centered {
+            background-color: rgb(0,0,0, 0.3); /* Black w/opacity/see-through */
+            color:rgb(113, 255, 250);
+            font-weight: bold;
+            border: 2px solid white;
+            position: absolute;
+            top: 71%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55%;
+            padding: 20px;
+            text-align: center;
+            font-size: 70px;
+            font-family: Gabriola;
+            font-style: oblique;
+        }
+        .blurry{
+            filter:blur(2px);
+
+        }
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: ivory;
+    box-sizing: border-box;
+}
+input[type="search"] {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e9edc9;
+    border:none;
+    width: 400px;
+    height: 5vh;
+    padding-left: 8px;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e8e8e4;
+    border: none;
+    width: 110%;
+    height: 5vh;
+    padding-left: 8px;
+    border-radius: 4px; 
+    font-size: 15px;
+}
+
+input[type="text"]:hover {
+    background-color: white;
+    box-shadow: 1px 1px 4px;
+}
+
+input[type="password"] {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e8e8e4;
+    border: none;
+    width: 110%;
+    height: 5vh;
+    padding-left: 8px;
+    border-radius: 4px;
+    font-size: 15px;
+   
+}
+input[type="password"]:hover {
+    background-color: white;
+    box-shadow: 1px 1px 4px;
+}
+
+.buton{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
+    color:green;
+    border-color: green;
+    border-radius: 8px; 
+    font-size: 25px;
+    width:110%;
+    height: 6vh;
+}
+.buton:hover{
+    background-color: #8ac926;
+    border-color: #8ac926;
+    color:white;
+}
+       
+    </style>
+</head>
+
+<body>
+    
+    
+    <span style="margin-left: 6em ;"><img src="loginimg.png" width="850px" height="480px"></span>
+   
+    <div class="logform">
+        <section id="login">
+            <form>
+                <h1 style="text-align: center; font-size:30px;">Sign In</h1><br><br>
+                <label for="uername" id="username">Username</label><br>
+                <input type="text" required><br><br>
+                <label for="psw" id="pass">Password</label><br>
+                <input type="password" name="psw" id="psw" required><br>
+                <input type="checkbox" onclick="myFunction()"><label for="show" id="spsw" >Show password</label><br><br>
+                <span style="font-size:18px; padding-left: 195px;"><a href="">Forgot password</a></span><br><br>
+                <button class="buton">Sign In</button><br><br><br>
+                <span style="text-align: center; font-size:23px;">
+                <label style="padding-left: 18px;">Don't have an account? <a href="register.html">Sign Up</a></label></span>
+            </form>
+        </section>
+    </div>
+    
+</body>
+
+</html>

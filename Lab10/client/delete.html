@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="deletebody">
+        <h1 style="color: blue;">Delete User Data</h1><br><br>
+        <form ng-submit="deleteEntry()">
+                <label for="delete" class="form-label">Select ID :</label><br>
+                <select class="form-select form-select-lg" ng-model="id" id="" required
+                    ng-options="data.id for data in datas"><br><br>
+                    <option selected disabled value="">Select one</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
+    </div>
+</body>
+
+</html>

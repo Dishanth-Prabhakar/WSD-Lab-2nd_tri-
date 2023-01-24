@@ -1,0 +1,11 @@
+var app=angular.module("category",[]);
+
+
+app.controller("catController",function($scope){
+    $scope.designs=[
+        {id:"C1",cat:"Bath-room",collect:48},
+        {id:"C2",cat:"Bed-room",collect:56},
+        {id:"C3",cat:"Living-room",collect:54},
+        {id:"C4",cat:"Kitchen",collect:32},
+    ];
+});

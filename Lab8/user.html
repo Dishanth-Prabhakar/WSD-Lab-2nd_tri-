@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+   
+</head>
+
+<body>
+    <label style="padding-left: 60px; font-size: 35px; color:blue;">Category info</label><br><br>
+    <div class="tab">
+    <table>
+        <tr>
+            <th>Category Id</th>
+            <th>Category Name</th>
+            <th>Collections</th>
+        </tr>
+    <tr ng-repeat="user in users">
+        <td>{{user.id}}</td>
+        <td>{{user.cat}}</td>
+        <td>{{user.collect}}</td>
+    </tr>
+</table>
+</div>
+</body>
+
+</html>

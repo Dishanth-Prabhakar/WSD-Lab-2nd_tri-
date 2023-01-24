@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="domp.css">
+</head>
+
+<body style="font-family:sans-serif; background-color: whitesmoke;">
+    <div class="header">
+        <label>Dom parser</label>
+    </div>
+    <table style="padding-left:65px;">
+        <tr>
+            <td>
+                <div class="tab1">
+                    <label style="font-size: 30px;"><b>Change Node</b></label><br><br>
+                    <button onclick="showhide()" style="font-size: 15px;"><b>Click here!</b></button>
+                    <button onclick="hide()" style="font-size: 15px;"><b>Hide</b></button><br><br><br>
+                    <label id="pass" style="padding-left:100px; color:#2734be"></label><br>
+                    <label id="newpass" style="padding-left:100px; color:#2734be"></label>
+                </div><br>
+            </td>
+            <td>
+                <div class="tab2">
+                    <label style="font-size: 30px;"><b>Remove Node</b></label><br><br>
+                    <button onclick="showhide1()" style="font-size: 15px;"><b>Click here!</b></button>
+                    <button onclick="hide1()" style="font-size: 15px;"><b>Hide</b></button><br><br><br>
+                    <p id="remove2" style="padding-left:120px;"></p>
+                </div>
+            </td><br>
+        </tr>
+        <tr>
+            <td>
+                <div class="tab3">
+                    <label style="font-size: 30px;"><b>Traverse Node</b></label><br><br>
+                    <button onclick="showhide2()" style="font-size: 15px;"><b>Click here!</b></button>
+                    <button onclick="hide2()" style="font-size: 15px;"><b>Hide</b></button><br>
+                    <p id="fun3" style="padding-left:170px;"></p>
+                </div>
+            </td>
+            <td>
+                <div class="tab4">
+                    <label style="font-size: 30px;"><b>Added Node</b></label><br><br>
+                    <button onclick="showhide3()" style="font-size: 15px;"><b>Click here!</b></button>
+                    <button onclick="hide3()" style="font-size: 15px;"><b>Hide</b></button><br><br><br>
+                    <p id="add" style="padding-left:150px;"></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+                myFunction1(this);
+                myFunction2(this);
+                myFunction3(this);
+            }
+        };
+        xhttp.open("GET", "domparser.xml", true);
+        xhttp.send();
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            x = xmlDoc.getElementsByTagName("pass")[0].childNodes[0];
+            document.getElementById("pass").innerHTML = "Old Password : " + x.nodeValue;
+            var xmlDoc = xml.responseXML;
+            x.nodeValue = " New Password : Amith@789";
+            x = xmlDoc.getElementsByTagName("pass")[0].childNodes[0];
+            document.getElementById("newpass").innerHTML = x.nodeValue;
+            document.getElementById("pass").style.display = "none";
+            document.getElementById("newpass").style.display = "none";
+        }
+        function showhide() {
+            document.getElementById("pass").style.display = "flex";
+            document.getElementById("newpass").style.display = "flex";
+        }
+        function hide() {
+            document.getElementById("pass").style.display = "none";
+            document.getElementById("newpass").style.display = "none";
+        }
+        function myFunction1(xml) {
+            var xmlDoc = xml.responseXML;
+            var root = xmlDoc.documentElement;
+            var currNode = root.childNodes[1];
+            removedNode = currNode.removeChild(currNode.childNodes[7]);
+            document.getElementById("remove2").innerHTML =
+                "Removed Node : " + removedNode.nodeName;
+            document.getElementById("remove2").style.display = "none";
+        }
+        function showhide1() {
+            document.getElementById("remove2").style.display = "flex";
+        }
+        function hide1() {
+            document.getElementById("remove2").style.display = "none";
+        }
+        function myFunction2(xml) {
+            var x, i, xmlDoc, txt;
+            xmlDoc = xml.responseXML;
+            txt = "";
+            count = 0;
+            x = xmlDoc.documentElement.childNodes;
+            for (i = 0; i < x.length; i++) {
+                if (x[i].nodeType == 1) {
+                    txt += x[i].nodeName + "<br>";  //display the child of root i.e, "customer"
+                    count = count + 1;
+                }
+            }
+            total = txt + "Total count : " + count;
+            document.getElementById("fun3").innerHTML = total;
+            document.getElementById("fun3").style.display = "none";
+        }
+        function showhide2() {
+            document.getElementById("fun3").style.display = "flex";
+        }
+        function hide2() {
+            document.getElementById("fun3").style.display = "none";
+        }
+
+        function myFunction3(xml) {
+            var x, y, z, i, xLen, yLen, newEle, newText, xmlDoc, txt;
+            xmlDoc = xml.responseXML;
+            txt = "";
+            x = xmlDoc.getElementsByTagName("customer");
+            xLen = x.length;
+            for (i = 0; i < xLen; i++) {
+                newEle = xmlDoc.createElement("Gender");
+                newText = xmlDoc.createTextNode("male");
+                newEle.appendChild(newText);
+                x[i].appendChild(newEle);
+            }
+            // Output all titles and editions
+            y = xmlDoc.getElementsByTagName("customer");
+            yLen = y.length
+            z = xmlDoc.getElementsByTagName("customer");
+            for (i = 0; i < yLen; i++) {
+                txt += y[i].childNodes[0].nodeValue +
+                    "New Node : Gender" +
+                    z[i].childNodes[0].nodeValue + "<br>";
+            }
+            document.getElementById("add").innerHTML = txt;
+            document.getElementById("add").style.display = "none";
+        }
+        function showhide3() {
+            document.getElementById("add").style.display = "flex";
+        }
+        function hide3() {
+            document.getElementById("add").style.display = "none";
+        }      
+    </script>
+</body>
+
+</html>
+

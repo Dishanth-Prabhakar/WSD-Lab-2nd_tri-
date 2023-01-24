@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="Regex.css">
+    <style>
+        /*.bar {
+            position: fixed;
+        }*/
+    
+        .box1 {
+            border: 1px solid white;
+            background-color: yellowgreen;
+            width: 100%;
+            height: 80px;
+            font-size: 35px;
+            padding-left: 35px;
+        }
+    
+        tr,td {
+            padding: 10px;
+        }
+    
+        .box2 {
+            border: 1px solid white;
+            background-color: white;
+            width: 1519px;
+            padding: 24px;
+        }
+    
+        .menu {
+            float: right;
+        }
+    
+        .menu a {
+            margin-right: 2px;
+            font-size: 22px;
+            color: yellowgreen;
+            padding: 10px 18px;
+        }
+    
+        .menu a:hover {
+            color: red;
+            border: 2px solid red;
+            border-radius: 15px;
+        }
+    
+        .signup {
+            border: 1px solid #e9edc9;
+            background-color: #e9edc9;
+            border-radius: 15px;
+            color: white;
+            height: 50px;
+        }
+    
+        .signup:hover {
+            background-color: white;
+            border: 1px solid white;
+        }
+        .foot{
+            margin:2em;
+            margin-top: 6em;
+            border: 2px solid yellowgreen;
+            border-radius: 20px;
+            width:95%;
+            height:650px;
+            color: gray;
+            padding-top: 25px;
+        }
+        .foot a{
+            color: gray;
+        }
+        .foot a:hover{
+            color: yellowgreen;
+            border: 2px solid yellowgreen;
+            border-top:none;
+            border-left: none;
+            border-right: none;
+        }
+        .copy{
+            margin: 1em;
+            text-align: center;
+            font-size: 25px;
+        }
+        .regform1{
+            float: left;
+            margin-left: 3em;
+            
+        }
+
+        .regform {
+            /*border: 3px solid yellowgreen;   // Border box for the registeration form 
+            border-radius: 17px;*/
+            width: 620px;
+            height: 860px;
+            padding-right: 55px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bar">
+        <div class="box1">
+            <table>
+                <tr>
+                    <td><img src="companylogo.jpg" width="60px" height="60px" style="border-radius:7px;"></td>
+                    <td><label>Dream Interiors</label></td>
+                </tr>
+            </table>
+        </div>
+    
+        <div class="box2">
+            <span><input type="search" placeholder="Search..."></span>
+            <span class="menu">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Catalogue</a>
+                <a href="">Careers</a>
+                <a href="">Sign In</a>
+                <button class="signup"><a href="register.html">Sign Up</a></button>
+            </span>
+        </div>
+    </div>
+    <br><br><br><br>
+    
+
+    <script>
+        function test() {
+            var format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            const name = document.getElementById("name");
+            const number = document.getElementById("number");
+            const mail = document.getElementById("mail");
+            const psw = document.getElementById("psw");
+            const rad = document.getElementById("rad");
+            const check = document.getElementById("check");
+
+            if (!name.value.match(/^[A-Za-z]+$/)) {
+                alert("Name should be only in characters");
+                name.focus();
+                return false;
+            }
+            if (!rad.checked) {
+                alert("Select the gender");
+                rad.focus();
+                return false;
+            } 
+            if (!number.value.match(/^[1-9][0-9]{9}$/)) {
+                alert("Phone no. must be 10 digits and first digit can't be 0!");
+                number.focus();
+                return false;
+            }
+            if (!mail.value.match(format)) {
+                alert("Enter valid mail");
+                mail.focus();
+                return false;
+            }
+            if (!psw.value.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!/|@$%^&*-]).{8,}$/)) {
+                alert("Passwords must contain:\na minimum of 1 lower case letter [a-z] and\na Minimum of 1 upper case letter [A-Z] and\na Minimum of 1 numeric character [0-9] and\n1 Special character: ~`!@#$%^&*()-_+={}[]|\;:<>,./? \nat Minimum 8 characters");
+                psw.focus();
+                return false;
+            }
+            if (!check.checked) {
+                alert("Agree the terms and conditions");
+                check.focus();
+                return false;
+            } 
+            if(name && number && mail && psw && rad && check){
+                window.alert("Form Submitted!")
+                location.reload();
+                return
+            }
+        }
+        function myFunction() {
+            var x = document.getElementById("psw");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+     <span style="margin-left: 2em ;"><img src="registerpimg.png" width="750px" height="920px"></span>
+     <div class="regform1">
+      <div class="regform">
+            <form autocomplete="off">
+                <h1 style="text-align: center; font-size:30px; color:blue; padding-top:23px;">Sign Up</h1><br><br>
+                <div class="regform1">
+                <label for="name" style="font-size: 25px;">Name</label><br>
+                <input type="text" id="name" name="name" autofocus required><br><br><br>
+                <label style="font-size: 25px;">Gender </label><br><br>
+                <label style="font-size: 20px;">Male</label>
+                <input type="radio" style="width:15px; height:15px;" id="rad" name="Gender" value="Male" required>
+                <label style="font-size: 20px; padding-left: 55px;">Female</label>
+                <input type="radio" style="width:15px; height:15px;" id="rad" name="Gender" value="Female" required>
+                <label style="font-size: 20px; padding-left: 55px;">Others</label>
+                <input type="radio" style="width:15px; height:15px;" id="rad" name="Gender" value="Others" required> <br><br><br>
+                <label for="number" style="font-size: 25px;">Phone Number</label><br>
+                <input type="tel" id="number" required><br><br><br>
+                <label for="mail" style="font-size: 25px;">Email</label><br>
+                <input type="email" id="mail"><br><br><br>
+                <label for="psw" style="font-size: 25px;">Set password</label><br>
+                <input type="password" id="psw"><br>
+                <input type="checkbox" onclick="myFunction()">Show Password<br><br>
+                <p style="font-size: 18px;"><a href="">*Terms and conditions</a></p><br>
+                <label  style="font-size: 25px;"><b>Declaration :-</b></label><br>
+                <input type="checkbox" id="check" required><span style="font-size: 25px;"> have agreed to all terms and conditions.</span><br><br><br>
+                <button type="button" onclick="test()" class="buton">Submit</button><br><br><br>
+                <label style="font-size: 25px; padding-left: 45px;">Already have an account? <a href="login.html">Sign In</a></label>
+            </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+
+
+
+<footer>
+    <div class="foot">
+        <span><label style="padding-left:80px; font-size:25px;">&gt; <a href="about.html">About</a></label></span>
+        <span><label style="padding-left:410px; font-size:25px;">&gt; <a href="about.html#expert">Experts</a></label></span>
+        <span><label style="padding-left:410px; font-size:25px;">&gt; <a href="about.html#achieve">Achievements</a></label></span><br><br>
+        <span><label style="padding-left:79px;font-size:25px;">&gt; <a href="about.html#awards">Awards</a></label></span>
+        <span><label style="padding-left:398px; font-size:25px;">&gt; <a href="career.html">Careers</a></label></span>
+    <br><br><br><hr><br>
+        <div class="branch">
+        <label style="font-size:30px; padding-left:60px; ">Our Branches : </label><br><br>
+        <table>
+			<ul>
+			<tr style="font-size:20px;">
+				<td style="padding-left:60px; padding-bottom:50px;" ><li><b> Bangalore Branch :</b> <br><br>Phone No. 9876543210<br>Email : interiorsblr@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br>  Magadi Road, Bangalore, Karnataka - 560036</li> </td>
+				<td style="padding-left:110px; padding-bottom:50px;"><li><b> Chennai Branch : </b><br><br>Phone No. 9876543210<br>Email : interiorschi@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br>  Magadi Road, Chennai, Tamil Nadu - 560036</li> </td>
+				<td style="padding-left:110px; padding-bottom:50px;"><li><b> Cochi Branch : </b> <br><br>Phone No. 9876543210<br>Email : interiorscoc@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br>  Magadi Road, Cochi, Kerala - 560036</li> </td>
+			</tr>
+			<tr style="font-size:20px;">
+				<td style="padding-left:60px; padding-bottom:50px;"><li><b> Delhi Branch : </b><br><br>Phone No. 9876543210<br>Email : interiorsdlh@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br>  Magadi Road, New Delhi - 560036 </li></td>
+				<td style="padding-left:110px; padding-bottom:50px;"><li><b> Hyderabad Branch :</b> <br><br>Phone No. 9876543210<br>Email : interiorshyb@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br>  Magadi Road, Hyderabad, Telagana - 560036 </li></td>
+				<td style="padding-left:110px; padding-bottom:50px;"><li><b> Mumbai Branch : </b><br><br>Phone No. 9876543210<br>Email : interiorsmum@gamil.com<br> Address : No.46, 8nd cross, 7th main,<br>  Magadi Road, Mumbai, Maharashtra - 560036 </li></td>
+			</tr>
+			</ul>
+		</table>
+    </div>
+    </div>
+    <div class="copy"><a href="">Copyrights </a>&copy; Dishanth P</div>
+</footer>
+
+</html>

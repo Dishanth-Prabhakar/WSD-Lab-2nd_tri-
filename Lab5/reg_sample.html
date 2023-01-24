@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <link rel="stylesheet" href="Regex.css">
+    <style>
+        .click {
+            font-size: 2px;
+        }
+
+        @media(min-width:355px) {
+            label,body,.dot {
+                font-size:larger;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function test() {
+            var format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            const name = document.getElementById("name");
+            const number = document.getElementById("number");
+            const mail = document.getElementById("mail");
+            const psw = document.getElementById("psw");
+            const rad = document.getElementById("rad");
+            const check = document.getElementById("check");
+
+            if (!name.value.match(/^[A-Za-z]+$/)) {
+                alert("Name should be only in characters");
+                name.focus();
+                return false;
+            }
+            if (!rad.checked) {
+                alert("Select the gender");
+                rad.focus();
+                return false;
+            } 
+            if (!number.value.match(/^[1-9][0-9]{9}$/)) {
+                alert("Phone no. must be 10 digits and first digit can't be 0!");
+                number.focus();
+                return false;
+            }
+            if (!mail.value.match(format)) {
+                alert("Enter valid mail");
+                mail.focus();
+                return false;
+            }
+            if (!psw.value.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!/|@$%^&*-]).{8,}$/)) {
+                alert("Passwords must contain:\na minimum of 1 lower case letter [a-z] and\na Minimum of 1 upper case letter [A-Z] and\na Minimum of 1 numeric character [0-9] and\n1 Special character: ~`!@#$%^&*()-_+={}[]|\;:<>,./? \nat Minimum 8 characters");
+                psw.focus();
+                return false;
+            }
+            if (!check.checked) {
+                alert("Agree the terms and conditions");
+                check.focus();
+                return false;
+            } 
+            if(name && number && mail && psw && rad && check){
+                window.alert("Form Submitted!")
+                location.reload();
+                return
+            }
+        }
+        function myFunction() {
+            var x = document.getElementById("psw");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+    <div class="container">
+        <div class="contain">
+
+            <form autocomplete="off">
+                <a href="" style="justify-content: right;">Settings</a>
+                <h1>Registration Form</h1><br><br>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" autofocus required><br><br><br>
+                <label>Gender</label><br><br>
+                <input type="radio" name="Gender" value="Male" class="dot" id="rad" required>Male
+                <input type="radio" name="Gender" value="Female" class="dot" id="rad" required>Female
+                <input type="radio" name="Gender" value="Others" class="dot" id="rad" required>Others<br><br><br>
+                <label for="number">Phone Number</label><br>
+                <input type="tel" id="number" required><br><br><br>
+                <label for="mail">Email</label><br>
+                <input type="email" id="mail"><br><br><br>
+                <label for="psw">Password</label><br>
+                <input type="password" id="psw"><br>
+                <input type="checkbox" onclick="myFunction()">Show Password<br><br>
+                <p><a href="">*Terms and conditions</a></p>
+                <label><b>Declaration :-</b></label><br>
+                <input type="checkbox" id="check" required>I have agreed to all terms and conditions.<br><br><br>
+                <button type="button" onclick="test()">Submit</button><br><br><br>
+                <div style="padding-left:9vw; font-size: 20px;">Already have an acconunt?<a href="Regexlog.html">Sign in!</a></div><br><br> 
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

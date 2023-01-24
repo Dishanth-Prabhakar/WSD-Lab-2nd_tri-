@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="settings.css">
+    <title>Settings Page</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; font-size: 20px;">
+    <form onsumbit="return false">
+        <div class="container">
+            <div class="contain">
+                <h3>Settings</h3><br>
+                <div class="box1">
+                    <label><b>Set background Color</b></label><br><br>
+                    <select id="demo" onchange="show()">
+                        <option value="" disabled selected>Select Color...</option>
+                        <option value="black">Black</option>
+                        <option value="ivory">Ivory</option>
+                        <option value="Lightgreen">Lightgreen</option>
+                        <option value="lightgrey">Lightgrey</option>
+                        <option value="white">White</option>
+                        <option value="whitesmoke">Whitesmoke</option>
+                        <option value="Wheat">Wheat</option>
+                    </select><br><br>
+                </div><br>
+                <div class="box2">
+                    <label><b>Set the cookie</b></label><br><br>
+                    <label>Cookie Name : </label><br>
+                    <input type="text" id="iname" /><br><br>
+                    <label>Cookie Value : </label><br>
+                    <input type="text" id="ivalue" /><br><br>
+                    <button onclick="setcookie()">Set</button><br><br>
+                </div><br>
+                <div class="box3">
+                    <label><b>Display the cookie</b></label><br><br>
+                    <button onclick="display()">Click here!</button><br><br>
+                </div><br>
+                <div class="box4">
+                    <label><b>Delete the cookie</b></label><br><br>
+                    <label>Select cookie name : </label><br>
+                    <input type="text" id="cookieselect" /><br><br>
+                    <button onclick="del()">Delete</button><br><br>
+                </div><br>
+    </form>
+    <script>
+        function show() {
+            var value = document.getElementById("demo").value;
+            if (value != "Select Color") {
+                document.body.style.backgroundColor = value;
+                document.cookie = "color=" + value + ";";
+            }
+        }
+        window.onload = function () {
+            if (document.cookie.length != 0) {
+                var a = document.cookie.split(";");
+                document.getElementById("demo").value = a[2];
+                col = a[2].split("=")
+                document.body.style.backgroundColor = col[1];
+            }
+            var cookieList = document.cookie.split(';');
+            for (var i = 0; i < cookieList.length; i++) {
+                var targetCookie = cookieList[i].split("=");
+                if (targetCookie[0].match(colorCookie)) {
+                    document.bgColor = targetCookie[1];
+                }
+            }
+        }
+        const cookiename = document.getElementById("iname");
+        const cookievalue = document.getElementById("ivalue");
+
+        function setcookie() {
+            var cookienameinput = cookiename.value;
+            var cookievalueinput = cookievalue.value;
+
+            document.cookie = cookienameinput + "=" + cookievalueinput + ";";
+        }
+        function display() {
+            alert(document.cookie);
+        }
+        
+        const cookieselect = document.getElementById("cookieselect");
+
+        function del(){
+            var cookieselectinput = cookieselect.value;
+            if (cookieselect.value == '') {
+                window.alert("Please select a value!")
+                return
+            }
+            document.cookie = cookieselect.value + "=" + "abc ;expires= Mon, 05 Dec 2022 12:00:00 UTC"
+            alert("Selected cookie deleted")
+        }
+
+    </script>
+    </div>
+    </div>
+</body>
+
+</html>

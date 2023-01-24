@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+
+<body>
+    
+        <label style="padding-left: 60px; font-size: 35px; color:blue;">Employee's info</label><br><br>
+        <div class="tab">
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Phone number</th>
+                    <th>Mail ID</th>
+                    <th>Date of joining</th>
+                    <th>Salary</th>
+                </tr>
+                <tr ng-repeat="emp in empes">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.gender}}</td>
+                    <td>{{emp.phone}}</td>
+                    <td>{{emp.mail}}</td>
+                    <td>{{emp.doj}}</td>
+                    <td>{{emp.sal}}</td>
+                </tr>
+
+            </table>
+        </div>
+</body>
+
+</html>

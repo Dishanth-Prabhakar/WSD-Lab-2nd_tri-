@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+input[type="search"] {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #e9edc9;
+  border:none;
+  width: 400px;
+  height: 5vh;
+  padding-left: 8px;
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+        .box1 {
+            border: 1px solid white;
+            background-color: yellowgreen;
+            width: 100%;
+            height: 90px;
+            font-size: 35px;
+            padding-left: 35px;
+            padding-top: 10px;
+        }
+
+        .box2 {
+            border: 1px solid white;
+            background-color: white;
+            width: 1519px;
+            padding: 24px;
+        }
+
+        .menu {
+            float: right;
+        }
+
+        .menu a {
+            margin-right: 2px;
+            font-size: 22px;
+            color: yellowgreen;
+            padding: 10px 18px;
+        }
+
+        .menu a:hover {
+            color: red;
+            border: 2px solid red;
+            border-radius: 15px;
+        }
+
+        .signup {
+            border: 1px solid #e9edc9;
+            background-color: #e9edc9;
+            border-radius: 15px;
+            color: white;
+            height: 50px;
+        }
+
+        .signup:hover {
+            background-color: white;
+            border: 1px solid white;
+        }
+
+        .foot {
+            margin: 2em;
+            border: 2px solid yellowgreen;
+            border-radius: 20px;
+            width: 95%;
+            height: 700px;
+            color: gray;
+            padding-top: 25px;
+        }
+
+        .foot a {
+            color: gray;
+        }
+
+        .foot a:hover {
+            color: yellowgreen;
+            border: 2px solid yellowgreen;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .copy {
+            margin: 1em;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .menu1 a {
+            margin-right: 20px;
+            font-size: 22px;
+            color: yellowgreen;
+            padding: 10px 18px;
+        }
+
+        .menu1 a:hover {
+            color: red;
+            border: 2px solid red;
+            border-radius: 15px;
+        }
+
+        .client {
+            padding: 40px;
+        }
+
+        .tab {
+            padding-left: 100px;
+            font-size: 17px;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            text-align: center;
+            border: 2px solid gray;
+            border-collapse: collapse;
+            padding: 20px;
+
+        }
+
+        .branch {
+            padding-left: 85px;
+            font-size: 20px;
+        }
+
+

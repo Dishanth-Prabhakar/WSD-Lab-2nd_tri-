@@ -1,0 +1,38 @@
+body{
+    font-size:25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.body {
+    display: flex;
+    justify-content: center;
+}
+.contain{
+    border: 2px solid;
+    border-radius: 8px;
+    margin-top: 15vh;
+    width:30%;
+    height: 80%;
+    padding: 5%;
+}
+button{
+    border-color: green;
+    border-radius: 7px;
+    color:green;
+    width:30%;
+    height: 30%;
+    background-color: white;
+    font-size:20px;
+    box-shadow: 1px 1px 5px;
+}
+button:hover{
+    background-color: green;
+    color: white;
+}
+input[type=text]{
+    border-radius: 8px;
+    width:55%;
+    height:30px;
+    font-size: 17px;
+    /* background-color: ; */
+
+}

@@ -1,0 +1,105 @@
+body {
+    font-family: Arial;
+}
+
+.topnav a {
+    text-decoration: none;
+    padding: 15px 16px;
+    font-size:25px;
+}
+
+.topnav a:hover {
+    background-color: lightblue;
+    border-radius: 25px;
+}
+
+.topnav a:active {
+    background-color: lightblue;
+}
+
+.move {
+    background-color: yellow;
+    padding: 10px;
+}
+
+.move a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.button {
+    text-decoration: none;
+}
+input[type=text] {
+    width: 30%;
+    padding: 10px 100px;
+    margin: 8px 100px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 9px;
+    background-color: #ebebeb;
+  }
+  input[type=email] {
+    width: 30%;
+    padding: 10px 100px;
+    margin: 8px 100px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 9px;
+    background-color: #ebebeb;
+  }
+  input[type=tel] {
+    width: 30%;
+    padding: 10px 100px;
+    margin: 8px 100px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 9px;
+    background-color: #ebebeb;
+  }
+  textarea {
+    width: 30%;
+    padding: 10px 100px;
+    margin: 8px 100px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 9px;
+    background-color: #ebebeb;
+  }
+  input[type=submit] {
+    width: 17%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c0d6df;
+    font-size: 19px;
+  }
+  input[type=reset] {
+    width: 17%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c0d6df;
+    font-size: 19px;
+  }
+  input[type=date] {
+    width: 8%;
+    padding: 10px 10px;
+    margin: 8px 25px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 9px;
+    background-color: #ebebeb;
+  }
+  input[type=file] {
+    width: 15%;
+    padding: 10px 10px;
+    margin: 8px 25px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 9px;
+    background-color: #ebebeb;
+  }
+ .box{
+    border:2px solid;
+ }

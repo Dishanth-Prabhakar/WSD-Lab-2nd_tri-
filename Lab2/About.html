@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>About</title>
+	<link rel="stylesheet" href="About.css">
+</head>
+
+<body>
+	<h1 style="padding-left:25px; font-family:Calibri; font-size:40px;">  Limitless Interiors</h1>
+	<p style="padding-left:50px; font-size:20px;">We give life to your Dreams</p>
+	<div class="topnav" style="padding-left:800px;">
+		<a href="Home.html">Home</a>
+		<a href="About.html">About</a>
+		<a href="interiors.html">Designs</a>
+		<a href="Career.html">Careers</a>
+		<a href="login.html">Login!</a>
+	</div>
+	<br><br>
+	<div class="move">
+		<marquee><a href="">* New arrivals </a>&nbsp;&nbsp;&nbsp;
+			<a href=""> </a>&nbsp;&nbsp;&nbsp;
+			<a href="">* Job Notification </a>
+		</marquee>
+	</div>
+	<br><br>
+	<fieldset>
+		<legend style="font-size:30px;"><b> Feedback </b>  </legend><br>
+		<label style="font-size: 25px;"> 3 BHK Interiors </label><br><br>
+		<video src="3bhk-interiors(feedback)1.mp4" width="600" height="300" controls="controls">Your browser does not support video</video><br><br>
+		<audio src="3bhk-interiors(audio_feedback)1.mpeg" controls="controls">Your browser does not support Audio</audio>
+		
+	</fieldset><br>
+	<fieldset><br>
+		<label style="padding-left:30px; font-size:35px;"><b>Contact Us :</b></label><br><br>&nbsp;&nbsp;
+		<table>
+			<ul>
+			<tr style="font-size:20px;">
+				<td style="padding-left:60px; padding-bottom:50px;" ><b> Bangalore Branch : </b><br><br><b>Phone No.</b> 9876543210<br><b>Email :</b> interiorsblr@gamil.com<br><b> Address : </b> No.46, 8nd cross, 7th main,<br>  Magadi Road, Bangalore, Karnataka - 560036 </td>
+				<td style="padding-left:110px; padding-bottom:50px;"><b> Chennai Branch : </b><br><br><b>Phone No.</b> 9876543210<br><b>Email :</b> interiorschi@gamil.com<br><b> Address : </b> No.46, 8nd cross, 7th main,<br>  Magadi Road, Chennai, Tamil Nadu - 560036 </td>
+				<td style="padding-left:110px; padding-bottom:50px;"><b> Cochi Branch : </b><br><br><b>Phone No.</b> 9876543210<br><b>Email :</b> interiorscoc@gamil.com<br><b> Address : </b> No.46, 8nd cross, 7th main,<br>  Magadi Road, Cochi, Kerala - 560036 </td>
+			</tr>
+			<tr style="font-size:20px;">
+				<td style="padding-left:60px; padding-bottom:50px;"><b> Delhi Branch : </b><br><br><b>Phone No.</b> 9876543210<br><b>Email :</b> interiorsdlh@gamil.com<br><b> Address : </b> No.46, 8nd cross, 7th main,<br>  Magadi Road, New Delhi - 560036 </td>
+				<td style="padding-left:110px; padding-bottom:50px;"><b> Hyderabad Branch : </b><br><br><b>Phone No.</b> 9876543210<br><b>Email :</b> interiorshyb@gamil.com<br><b> Address : </b> No.46, 8nd cross, 7th main,<br>  Magadi Road, Hyderabad, Telagana - 560036</td>
+				<td style="padding-left:110px; padding-bottom:50px;"><b> Mumbai Branch : </b><br><br><b>Phone No.</b> 9876543210<br><b>Email :</b> interiorsmum@gamil.com<br><b> Address : </b> No.46, 8nd cross, 7th main,<br>  Magadi Road, Mumbai, Maharashtra - 560036</td>
+			</tr>
+			</ul>
+		</table>
+
+		<button onclick="getlocation()">Google location</button>  
+		<div id="location"></div>  
+		<script>  
+			var x= document.getElementById("location");  
+			function getlocation() {  
+				if(navigator.geolocation){  
+					navigator.geolocation.getCurrentPosition(showPosition)  
+				  }  
+				else  
+				{  
+					 alert("Sorry! your browser is not supporting")  
+				 } }  
+			   
+			 function showPosition(position){  
+			   var x = "Your current location is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " +    position.coords.longitude + ")";  
+						document.getElementById("location").innerHTML = x;  
+			 }  
+		</script>   
+	</fieldset>
+</body>
+</html>

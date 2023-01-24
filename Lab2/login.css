@@ -1,0 +1,64 @@
+body {
+    font-family: Arial;
+}
+
+.topnav a {
+    text-decoration: none;
+    padding: 15px 16px;
+    font-size:25px;
+}
+
+.topnav a:hover {
+    background-color: lightblue;
+    border-radius: 25px;
+}
+
+.topnav a:active {
+    background-color: lightblue;
+}
+
+.move {
+    background-color: yellow;
+    padding: 10px;
+}
+
+.move a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.button {
+    text-decoration: none;
+}
+input[type=text] {
+    width: 30%;
+    padding: 10px 10px;
+    margin: 8px 25px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 9px;
+    background-color: #ebebeb;
+  }
+  input[type=password] {
+    width: 30%;
+    padding: 10px 10px;
+    margin: 8px 25px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 9px;
+    background-color: #ebebeb;
+  }
+  
+  button{
+    width: 30%;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+    background-color: #c0d6df;
+  }
+  .box{
+    
+  }
+  
+  
+  
